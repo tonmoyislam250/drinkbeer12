@@ -2,7 +2,7 @@ FROM golang:alpine
 
 #Deps from old main Branch
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/v3.10/main --update \
-     zlib-dev zlib-static curl-dev curl-static openssl-dev openssl-libs-static
+     zlib-dev zlib-static curl-dev curl-static openssl-dev=1.1.1l-r0 openssl-libs-static
      
 # Deps from Testing Branch
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update \
