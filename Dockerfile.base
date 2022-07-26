@@ -2,10 +2,10 @@ FROM golang:alpine
 
 #Deps from old main Branch
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/v3.10/main --update \
-     lib-dev zlib-static curl-dev curl-static openssl-dev openssl-libs-static
+     zlib-dev zlib-static curl-dev curl-static openssl-dev openssl-libs-static
      
 # Deps from Testing Branch
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update \
      alpine-sdk git libtool autoconf automake linux-headers musl-dev m4 build-base perl ca-certificates \
-     crypto++-dev crypto++-static brotli-dev brotli-static z unzip tar xz wget \
+     crypto++-dev crypto++-static brotli-dev brotli-static unzip tar xz wget \
      c-ares-dev c-ares-static sqlite-dev sqlite-static libsodium-dev libsodium-static  nghttp2-dev nghttp2-static
