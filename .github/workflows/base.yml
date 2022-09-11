@@ -1,12 +1,7 @@
 name: Build and Push Base image
 
 on :
-  push:
-    branches:
-      - master
-  schedule:
-    - cron: 00 02 * * *
-
+  workflow_dispatch
 jobs:
   BuildBase:
     runs-on: ubuntu-latest
@@ -27,6 +22,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile.base
-          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x
+          platforms: linux/amd64
           push: true
-          tags: ghcr.io/viswanathbalusu/megarestbase:latest
+          tags: ghcr.io/tonmoyislam250/megarestbase:latest
