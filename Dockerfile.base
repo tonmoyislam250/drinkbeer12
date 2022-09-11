@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:alpine3.15
  
 # Deps
 RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update \
