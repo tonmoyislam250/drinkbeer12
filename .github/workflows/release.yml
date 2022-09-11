@@ -1,8 +1,6 @@
 name: MegaSDKREST Release
 on:
-  push:
-    tags:
-      - "v*.*.*"
+  workflow_dispatch
 jobs:
   BuildArtifacts:
     runs-on: ubuntu-latest
@@ -10,24 +8,9 @@ jobs:
       matrix:
         arch:
           - linux/amd64
-#           - linux/386
-          - linux/arm64/v8
-          - linux/arm/v7
-          - linux/arm/v6
-          - linux/ppc64le
         include:
           - arch: linux/amd64
             dist: amd64
-#           - arch: linux/386
-#             dist: i386 
-          - arch: linux/arm64/v8
-            dist: arm64
-          - arch: linux/arm/v7
-            dist: armv7
-          - arch: linux/arm/v6
-            dist: armv6
-          - arch: linux/ppc64le
-            dist: ppc64le
     steps:
       - uses: actions/checkout@v2
       - name: Set up QEMU
@@ -73,10 +56,7 @@ jobs:
       - run: |
           mkdir outputs
           cp artifacts/megasdkrest-amd64/* outputs/
-          cp artifacts/megasdkrest-arm64/* outputs/
-          cp artifacts/megasdkrest-armv7/* outputs/
-          cp artifacts/megasdkrest-armv6/* outputs/
-          cp artifacts/megasdkrest-ppc64le/* outputs/
+          
       - name: Create Release
         uses: softprops/action-gh-release@v1
         env:
