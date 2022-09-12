@@ -5,7 +5,7 @@ ENV HOST_CPU_ARCH=$CPU_ARCH
 
 # MegaSDK
 RUN git clone https://github.com/meganz/sdk.git sdk && cd sdk && \
-    git checkout v3.12.2 && \
+    git checkout v4.2.0 && \
     sh autogen.sh && \
     ./configure --disable-silent-rules --disable-shared --enable-static --without-freeimage && \
     make -j$(getconf _NPROCESSORS_ONLN) && \
