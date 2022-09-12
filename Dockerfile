@@ -4,7 +4,7 @@ ARG CPU_ARCH=amd64
 ENV HOST_CPU_ARCH=$CPU_ARCH
 
 ENV VERSION=0.1.1
-ENV MEGASDK_VERSION=4.2.0
+ENV MEGASDK_VERSION=3.12.3
 
 # MegaSDK
 RUN git clone https://github.com/meganz/sdk.git sdk && cd sdk && \
