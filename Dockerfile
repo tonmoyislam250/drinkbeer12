@@ -5,9 +5,9 @@ ENV HOST_CPU_ARCH=$CPU_ARCH
 
 # MegaSDK
 RUN git clone https://github.com/meganz/sdk.git sdk && cd sdk && \
-    git checkout v4.2.0 && \
+    git checkout v3.12.2 && \
     sh autogen.sh && \
-    ./configure CFLAGS='-fpermissive' CXXFLAGS='-fpermissive' CPPFLAGS='-fpermissive' --disable-silent-rules --disable-shared --enable-static --without-freeimage && \
+    ./configure --disable-silent-rules --disable-shared --enable-static --without-freeimage && \
     make -j$(getconf _NPROCESSORS_ONLN) && \
     make install
 
