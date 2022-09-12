@@ -1,4 +1,4 @@
 FROM golang:bullseye
  
-RUN sudo apt-get update -qq
-RUN sudo apt-get install -qq libcurl4-openssl-dev libc-ares-dev libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev libreadline-dev
+RUN apt-get update -y
+RUN apt-get install -y git libtool autoconf automake linux-headers musl-dev m4 libcurl4-openssl-dev libc-ares-dev libssl-dev libcrypto++-dev zlib1g-dev libsqlite3-dev libfreeimage-dev libreadline-dev
